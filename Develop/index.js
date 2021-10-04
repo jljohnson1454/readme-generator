@@ -50,8 +50,8 @@ const promptUser = () => {
             type: 'list',
             name: 'License',
             message: "Choose the licenses used in this project",
-            choices: [
-                
+            choices: [ 'MIT License', 'Babel', '.NET Core', 'Rails'
+
             ]
         }
 
