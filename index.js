@@ -3,14 +3,7 @@ console.log('Hello World')
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generate = require('./Develop/utils/generateMarkdown');
 const generateMarkdown = require('./Develop/utils/generateMarkdown');
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data)
-
-}
 
 
 // TODO: Create an array of questions for user input
@@ -60,15 +53,19 @@ const promptUser = () => {
             type: 'checkbox',
             name: 'license',
             message: "Choose the licenses used in this project",
-            choices: [ 'MIT', 'GNU GPLv3', 'ISC', 'Apache', 'No license'
-
-            ]
+            choices: [ 'MIT', 'GNU_GPLv3', 'ISC', 'Apache', 'No license']
         }
     ])
     .then(data => {
         writeToFile('README.md', generateMarkdown(data));
     console.log(data)}
     )
+
+}
+
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(fileName, data)
 
 }
 
