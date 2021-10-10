@@ -26,27 +26,50 @@ const promptUser = () => {
         {
             type: 'input',
             name:'description',
-            message: 'Please write a description of your project (Required)'
-        },
-        {
-            type: 'confirm',
-            name: 'table',
-            message: 'Please enter a table of contents (optional)'
+            message: 'Please write a description of your project (Required)',
+            validate: titleInput => {
+                if(titleInput) {
+                    return true;
+                } else {
+                    console.log('Please enter description of your project');
+                    return false;
+                }}
         },
         {
             type: 'input',
             name: 'installation',
-            message: 'Please provide installation steps (if any)'
+            message: 'Please provide installation steps',
+            validate: titleInput => {
+                if(titleInput) {
+                    return true;
+                } else {
+                    console.log('Please enter installation steps!');
+                    return false;
+                }}
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'What is the project being used for?'
+            message: 'What is the project being used for?',
+            validate: titleInput => {
+                if(titleInput) {
+                    return true;
+                } else {
+                    console.log('Please enter project use');
+                    return false;
+                }}
         },
         {
             type: 'input',
             name: 'credits',
-            message: "Please list any collaborators or third party assets used: ",
+            message: "Please list any contributors or third party assets used: ",
+            validate: titleInput => {
+                if(titleInput) {
+                    return true;
+                } else {
+                    console.log('Please enter contributors!');
+                    return false;
+                }}
         },
         {
             type: 'checkbox',
@@ -57,13 +80,27 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'questions',
-            message: ["Please enter your Gihub username"]
+            message: ["Please enter your Gihub username"],
+            validate: titleInput => {
+                if(titleInput) {
+                    return true;
+                } else {
+                    console.log('Please enter username!');
+                    return false;
+                }}
             
         },
         {
             type: 'input',
             name: 'questions2',
-            message: "Please enter your email address"
+            message: "Please enter your email address",
+            validate: titleInput => {
+                if(titleInput) {
+                    return true;
+                } else {
+                    console.log('Please enter email address!');
+                    return false;
+                }}
             
         }
         
