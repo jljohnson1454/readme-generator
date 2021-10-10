@@ -46,14 +46,28 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'credits',
-            messagae: "Please list any collaborators or third party assets used: ",
+            message: "Please list any collaborators or third party assets used: ",
         },
         {
             type: 'checkbox',
             name: 'license',
             message: "Choose the licenses used in this project",
             choices: [ 'MIT', 'GNU_GPLv3', 'ISC', 'Apache', 'No license']
+        },
+        {
+            type: 'input',
+            name: 'questions',
+            message: ["Please enter your Gihub username"]
+            
+        },
+        {
+            type: 'input',
+            name: 'questions2',
+            message: "Please enter your email address"
+            
         }
+        
+
     ])
     .then(data => {
         writeToFile('README.md', generateMarkdown(data));

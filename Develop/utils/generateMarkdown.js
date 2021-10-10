@@ -44,9 +44,8 @@ function generateMarkdown(data) {
   2. [Usage](#usage)
   3. [Credits](#credits)
   4. [License](#license)
+  5. [Questions](#questions)
   
-  ${data.table}
-
   ## Installation
   ${data.installation}
 
@@ -62,9 +61,16 @@ function generateMarkdown(data) {
     
     return `[${value}]${link}`
   }).join('<br />')}
-  
-  
 
+  ## Questions
+
+  If you have any questions, please feel free to reach me at my Github account or email:
+  <br />
+  <br />
+  Github: [${data.questions}](https://github.com/${data.questions})
+  <br />
+  <br />
+  Email: ${data.questions2}
 `;
 }
 
