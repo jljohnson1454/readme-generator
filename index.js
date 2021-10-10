@@ -50,7 +50,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'What is the project being used for?',
+            message: 'Please provide a screenshot or video of how to use your project',
             validate: titleInput => {
                 if(titleInput) {
                     return true;
